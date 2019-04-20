@@ -1,4 +1,5 @@
 ﻿using Framework.UltimateQa.Application.UltimateQa.Locator;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -8,23 +9,23 @@ namespace Framework.UltimateQa.Application.UltimateQa.Pages
 {
     public class Home
     {
-        private IWebDriver Driver;
+        private readonly IWebDriver _driver;
+        private readonly HomePageLocators _homepageLocator;
+        public readonly string HomeUrl = "https://www.ultimateqa.com";
 
         public Home(IWebDriver driver)
         {
-            Driver = driver;
+            _driver = driver;
+            _homepageLocator = new HomePageLocators(_driver);
         }
 
         public Home LaunchApplication()
         {
-            Driver?.Navigate().GoToUrl("https://www.ultimateqa.com");
-            Driver.Manage().Window.Maximize();
+            _driver?.Navigate().GoToUrl(HomeUrl);
+            _driver?.Manage().Window.Maximize();
             return this;
         }
 
-        public void GoToAutomationExercisePage()
-        {
-            Driver.FindElement(By.LinkText("Automation Exercises")).Click();
-        }
+        public void GoToAutomationExercisePage() => _homepageLocator.AutomationExerciseLink.Click();
     }
 }

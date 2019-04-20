@@ -1,19 +1,19 @@
-﻿using System;
+﻿using Framework.UltimateQa.Enums;
 using OpenQA.Selenium;
-using System.Collections.Generic;
-using System.Text;
 using OpenQA.Selenium.Chrome;
-using Framework.UltimateQa.Enums;
+using System;
 using System.IO;
 using System.Reflection;
 
-namespace Framework.UltimateQa.Driver
+namespace Framework.UltimateQa.WEbDriver
 {
     public class WebDriver
     {
-        public WebDriver(string DriverType = DriverType.CHROME)
+        public IWebDriver Driver { get; set; }
+
+        public WebDriver(string driverType = DriverType.Chrome)
         {
-            Driver = GetChromeDriver();            
+            Driver = GetChromeDriver();
             Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10.00);
         }
 
@@ -22,7 +22,6 @@ namespace Framework.UltimateQa.Driver
             return new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
         }
 
-        public IWebDriver Driver { get; set; }
-
+        public void Close() => Driver.Close();
     }
 }

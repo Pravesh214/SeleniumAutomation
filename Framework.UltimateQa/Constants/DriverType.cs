@@ -2,8 +2,8 @@
 {
     public class DriverType
     {
-        public const string CHROME = "CHROME";
+        public const string Chrome = "Chrome";
 
-        internal const string IE = "IE";
+        internal const string InternetExplore = "InternetExplore";
     }
 }
