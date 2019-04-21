@@ -9,10 +9,9 @@ namespace NUnit.TestProject.TestApplication.UltimateQa.Tests
     {
         [Test]
         public void SmokeTest()
-        {           
-            Home homePage = new Home(Driver);
-            homePage.LaunchApplication();
-            homePage.GoToAutomationExercisePage();            
+        {            
+            Home homePage = new Home(Driver);            
+            homePage.GoToAutomationExercisePage();             
         }       
     }
 }

@@ -9,7 +9,7 @@ namespace Framework.UltimateQa.WEbDriver
 {
     public class WebDriver
     {
-        public IWebDriver Driver { get; set; }
+        public IWebDriver Driver { get; set; }        
 
         public WebDriver(string driverType = DriverType.Chrome)
         {
@@ -20,7 +20,7 @@ namespace Framework.UltimateQa.WEbDriver
         public static IWebDriver GetChromeDriver()
         {
             return new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-        }
+        }        
 
         public void Close() => Driver.Close();
     }

@@ -13,8 +13,7 @@ namespace NUnit.TestProject.TestApplication.UltimateQa.Tests
         [Test]
         public void FillForm()
         {
-            Home homePage = new Home(Driver);
-            homePage.LaunchApplication();
+            Home homePage = new Home(Driver);            
             homePage.GoToAutomationExercisePage();
 
             AutomationExercise automationExercise = new AutomationExercise(Driver);
