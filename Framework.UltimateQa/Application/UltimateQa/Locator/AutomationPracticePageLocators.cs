@@ -16,5 +16,9 @@ namespace Framework.UltimateQa.Application.UltimateQa.Locator
         public IWebElement ApplicationEvolveLink => _driver.FindElement(By.PartialLinkText("evolves"));
 
         public IWebElement SprintOneHeading => _driver.FindElement(By.XPath("//*[@id=\"post-927\"]/h1"));
+
+        public IWebElement FirstNameField => _driver.FindElement(By.Name("firstname"));
+
+        public IWebElement SubmitButton => _driver.FindElement(By.Id("submitForm"));
     }
 }

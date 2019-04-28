@@ -20,7 +20,7 @@ namespace NUnit.TestProject.TestApplication.UltimateQa.Tests
             automationExercise.GoToFormSubmissionPage();
 
             FormSubmissionPage formSubmissionPage = new FormSubmissionPage(Driver);
-            formSubmissionPage.FillFormDetails();            
+            formSubmissionPage.FillFormDetails("name", "message");            
         }
     }
 }

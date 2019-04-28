@@ -18,7 +18,7 @@ namespace NUnit.TestProject.TestApplication.UltimateQa.Tests
 
             AutomationExercise automationExercise = new AutomationExercise(Driver);
             automationExercise.GoToEvolveApplicationPage();
-            Assert.IsTrue(automationExercise.ValidateSprintOneHeading(), "Sprint 1 page not loaded");            
+            automationExercise.ValidateSprintOne();            
         }
     }
 }

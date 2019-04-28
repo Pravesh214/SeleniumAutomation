@@ -11,9 +11,5 @@ namespace Framework.UltimateQa.Application.UltimateQa.Locator
         public IWebElement AutomationExerciseLink => _driver.FindElement(By.LinkText("Automation Exercises"));
 
         public IWebElement GetMenuLink(string linkText) => _driver.FindElement(By.LinkText(linkText));
-        
-        
-
-
     }
 }

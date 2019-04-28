@@ -1,4 +1,5 @@
 ﻿using Framework.UltimateQa.Application.UltimateQa.Locator;
+using NUnit.Framework;
 using OpenQA.Selenium;
 namespace Framework.UltimateQa.Application.UltimateQa.Pages
 {
@@ -15,6 +16,13 @@ namespace Framework.UltimateQa.Application.UltimateQa.Pages
 
         public void GoToEvolveApplicationPage() => _practicePageLocators.ApplicationEvolveLink.Click();
 
-        public bool ValidateSprintOneHeading() => (_practicePageLocators.SprintOneHeading.Displayed);
+        public void ValidateSprintOne(string firstname = "FirstName")
+        {
+            if (!_practicePageLocators.SprintOneHeading.Displayed)            
+                Assert.Fail("Sprint 1 page not loaded");
+            
+            _practicePageLocators.FirstNameField.SendKeys(firstname);
+            _practicePageLocators.SubmitButton.Click();
+        }        
     }
 }
