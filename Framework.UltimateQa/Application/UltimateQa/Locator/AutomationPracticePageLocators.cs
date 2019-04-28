@@ -12,5 +12,9 @@ namespace Framework.UltimateQa.Application.UltimateQa.Locator
         public AutomationPracticePageLocators(IWebDriver webDriver) => _driver = webDriver;
 
         public IWebElement FillOutFormsLink => _driver.FindElement(By.LinkText("Fill out forms"));
+
+        public IWebElement ApplicationEvolveLink => _driver.FindElement(By.PartialLinkText("evolves"));
+
+        public IWebElement SprintOneHeading => _driver.FindElement(By.XPath("//*[@id=\"post-927\"]/h1"));
     }
 }

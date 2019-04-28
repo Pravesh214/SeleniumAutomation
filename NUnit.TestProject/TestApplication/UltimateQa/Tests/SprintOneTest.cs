@@ -8,19 +8,17 @@ using System.Text;
 namespace NUnit.TestProject.TestApplication.UltimateQa.Tests
 {
     [TestFixture]
-    public class FillFormTest : TestBase
+    public class SprintOneTest : TestBase
     {
         [Test]
-        public void FillFormRun()
+        public void SprintOneTestRun()
         {
-            Home homePage = new Home(Driver);            
+            Home homePage = new Home(Driver);
             homePage.GoToAutomationExercisePage();
 
             AutomationExercise automationExercise = new AutomationExercise(Driver);
-            automationExercise.GoToFormSubmissionPage();
-
-            FormSubmissionPage formSubmissionPage = new FormSubmissionPage(Driver);
-            formSubmissionPage.FillFormDetails();            
+            automationExercise.GoToEvolveApplicationPage();
+            Assert.IsTrue(automationExercise.ValidateSprintOneHeading(), "Sprint 1 page not loaded");            
         }
     }
 }

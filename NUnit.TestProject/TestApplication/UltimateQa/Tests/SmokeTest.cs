@@ -8,7 +8,7 @@ namespace NUnit.TestProject.TestApplication.UltimateQa.Tests
     public class SmokeTests : TestBase
     {
         [Test]
-        public void SmokeTest()
+        public void SmokeTestRun()
         {            
             Home homePage = new Home(Driver);            
             homePage.GoToAutomationExercisePage();             
