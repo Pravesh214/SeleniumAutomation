@@ -3,18 +3,18 @@ using OpenQA.Selenium;
 
 namespace Framework.UltimateQa.Application.UltimateQa.Pages
 {
-    public class FormSubmissionPage
+    public class FormSubmissionPage : BasePage
     {
         private readonly FormSubmissionLocators _formSubmissionLocators;
 
-        public FormSubmissionPage(IWebDriver driver) => 
-            _formSubmissionLocators = new FormSubmissionLocators(driver);
+        public FormSubmissionPage(IWebDriver driver) : base(driver) => 
+            _formSubmissionLocators = new FormSubmissionLocators();
 
         public FormSubmissionPage FillFormDetails(string name, string message)
         {
-            _formSubmissionLocators.Name.SendKeys(name);
-            _formSubmissionLocators.Message.SendKeys(message);
-            _formSubmissionLocators.Submit.Click();
+            GetElement(_formSubmissionLocators.Name).SendKeys(name);
+            GetElement(_formSubmissionLocators.Message).SendKeys(message);
+            GetElement(_formSubmissionLocators.Submit).Click();
             return this;
         }
     }

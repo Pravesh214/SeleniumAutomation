@@ -3,26 +3,26 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 namespace Framework.UltimateQa.Application.UltimateQa.Pages
 {
-    public class AutomationExercise
+    public class AutomationExercise : BasePage
     {
         private readonly AutomationPracticePageLocators _practicePageLocators;
 
-        public AutomationExercise(IWebDriver driver)
+        public AutomationExercise(IWebDriver driver) : base(driver)
         {
-            _practicePageLocators = new AutomationPracticePageLocators(driver);
+            _practicePageLocators = new AutomationPracticePageLocators();
         }
 
-        public void GoToFormSubmissionPage() => _practicePageLocators.FillOutFormsLink.Click();
+        public void GoToFormSubmissionPage() => GetElement(_practicePageLocators.FillOutFormsLink).Click();
 
-        public void GoToEvolveApplicationPage() => _practicePageLocators.ApplicationEvolveLink.Click();
+        public void GoToEvolveApplicationPage() => GetElement(_practicePageLocators.ApplicationEvolveLink).Click();
 
         public void ValidateSprintOne(string firstname = "FirstName")
         {
-            if (!_practicePageLocators.SprintOneHeading.Displayed)            
+            if (!GetElement(_practicePageLocators.SprintOneHeading).Displayed)            
                 Assert.Fail("Sprint 1 page not loaded");
             
-            _practicePageLocators.FirstNameField.SendKeys(firstname);
-            _practicePageLocators.SubmitButton.Click();
+            GetElement(_practicePageLocators.FirstNameField).SendKeys(firstname);
+            GetElement(_practicePageLocators.SubmitButton).Click();
         }        
     }
 }

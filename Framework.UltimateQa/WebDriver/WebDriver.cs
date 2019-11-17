@@ -17,7 +17,7 @@ namespace Framework.UltimateQa.WEbDriver
             Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10.00);
         }
 
-        public static IWebDriver GetChromeDriver() => 
+        public IWebDriver GetChromeDriver() => 
             new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
 
         public void Close() => Driver.Close();
